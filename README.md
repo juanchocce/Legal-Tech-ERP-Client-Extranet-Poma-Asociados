@@ -7,6 +7,11 @@ Diseñada bajo arquitectura de Monolito Modular Full-Stack, gobernanza de datos 
 
 ---
 
+
+<img width="1366" height="768" src="https://github.com/juanchocce/Legal-Tech-ERP-Client-Extranet-Poma-Asociados/blob/main/img/poma1.png" />
+
+---
+
 ## 💼 1. Diagnóstico Comercial y Desafío de Negocio
 
 Los despachos jurídicos independientes y firmas boutique enfrentan fricciones operativas estructurales que impactan directamente su rentabilidad y tasa de retención:
@@ -15,6 +20,10 @@ Los despachos jurídicos independientes y firmas boutique enfrentan fricciones o
 * **Riesgo Crítico de Caducidad Procesal:** Pérdida de plazos perentorios y audiencias por dispersión de agendas individuales, gestionadas en canales informales sin alertas centralizadas de prioridad.
 * **Fricción en Atención al Patrocinado:** Clientes llamando repetidamente para consultar el estado de sus expedientes, consumiendo tiempo valioso del equipo en tareas administrativas no facturables.
 * **Falta de Trazabilidad y Riesgo de Confidencialidad:** Expedientes penales y familiares compartidos en carpetas locales o nubes genéricas sin auditoría de mutaciones, segregación de privilegios ni respaldos de seguridad contra borrado accidental.
+
+---
+
+<img width="1366" height="768" src="https://github.com/juanchocce/Legal-Tech-ERP-Client-Extranet-Poma-Asociados/blob/main/img/poma2.png" />
 
 ---
 
@@ -65,9 +74,13 @@ El modelo de datos fue normalizado en Tercera Forma Normal (3NF) dentro de Postg
 * **Monitoreo de Embudo Judicial:** Detección de cuellos de botella en la tabla `casos` evaluando los tiempos de permanencia de un expediente en cada instancia (Fiscalía, Juzgado de Investigación Preparatoria, Sala Superior).
 * **Control de Carga Laboral:** Balanceo dinámico de casos activos por abogado sénior vs. capacidad operativa de los asistentes.
 
+---
 
+<img width="1366" height="768" src="https://github.com/juanchocce/Legal-Tech-ERP-Client-Extranet-Poma-Asociados/blob/main/img/poma19.png" />
 
 ---
+
+
 
 ## 🔒 4. Matriz de Seguridad y Privacidad Legal (RBAC + RLS)
 
@@ -84,6 +97,12 @@ Tratándose de causas penales y disputas de derecho de familia, la seguridad de 
 * **Row-Level Security (RLS):** Filtrado forzado a nivel de motor de base de datos. Si un cliente altera parámetros HTTP, PostgreSQL rechaza la consulta al verificar que el `cliente_id` no coincide con el token JWT autenticado.
 * **Borrado Lógico (Soft Delete):** Ningún documento judicial puede destruirse físicamente por personal operativo. La columna `eliminado_en` (TIMESTAMPTZ) audita la baja lógica sin perder la evidencia forense ni el hash del archivo.
 
+
+
+---
+
+<img width="1366" height="768" src="https://github.com/juanchocce/Legal-Tech-ERP-Client-Extranet-Poma-Asociados/blob/main/img/poma10.png" />
+
 ---
 
 ## 📅 5. Integración Pragmática: Google Calendar RFC-5545
@@ -93,6 +112,11 @@ Para eliminar el riesgo de caducidad procesal sin incurrir en la fragilidad de t
 1. El ERP calcula fechas, horas perentorias y metadatos del juzgado.
 2. Genera una URL parametrizada: `https://calendar.google.com/calendar/render?action=TEMPLATE...`
 3. Con 1 solo clic, el abogado líder y el asistente sincronizan la audiencia en sus dispositivos móviles institucionales con alertas nativas preconfiguradas.
+
+
+---
+
+<img width="1366" height="768" src="https://github.com/juanchocce/Legal-Tech-ERP-Client-Extranet-Poma-Asociados/blob/main/img/poma15.png" />
 
 ---
 
